@@ -1,0 +1,6 @@
+2014/3/22-13:45- World and body references deleted. Only receive command
+at the second argument;
+2014/3/22-13:45- World and body references deleted. Only receive command
+at the second argument;
+2014/3/22-14:12- added a new inlet plus multiplier related to magnitude
+of synapse.;

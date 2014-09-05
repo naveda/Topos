@@ -1,0 +1,13 @@
+#N canvas 0 22 450 300 10;
+#X text 61 75 l_hip l_knee l_foot r_hip r_knee r_foot torso neck head
+l_shoulder l_elbow l_hand r_shoulder r_elbow r_hand;
+#X text 44 32 The namespace of the body parts used in the abstractions
+is based on the following list:;
+#X text 39 129 Therefore \, all messages arriving from midleware will
+be adapted to sends and receives based on these names.;
+#X obj 128 222 r skeleton/1/l_hand/messages;
+#X obj 129 253 route data;
+#X text 38 166 For example \, position data broadcasted from topos.osceleton2skeleton
+or topos.synapse2skeleton can be retrieved using the following receive:
+;
+#X connect 3 0 4 0;

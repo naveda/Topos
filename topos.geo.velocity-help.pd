@@ -1,0 +1,55 @@
+#N canvas 1181 278 646 466 10;
+#X obj 29 72 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X obj 28 93 metro 1000;
+#X obj 31 174 line;
+#X msg 31 149 \$1 1000;
+#X obj 31 125 random 3;
+#X obj 210 237 pack f f f;
+#X obj 86 174 line;
+#X msg 86 149 \$1 1000;
+#X obj 86 125 random 3;
+#X obj 145 174 line;
+#X msg 145 149 \$1 1000;
+#X obj 145 125 random 3;
+#X obj 25 292 sphere 0.1;
+#X obj 24 245 translateXYZ;
+#X obj 22 219 gemhead;
+#X obj 309 56 topos.gw;
+#X obj 24 269 color 0 0 0;
+#X obj 212 272 topos.geo.velocity;
+#X floatatom 213 321 5 0 0 0 - - -;
+#X text 206 345 velocity or speed;
+#X obj 343 270 topos.geo.displacement;
+#X obj 344 297 delta;
+#X floatatom 347 324 5 0 0 0 - - -;
+#X text 21 8 Calculates the frame-by-frame "instantaneous speed" of
+3d points (3 floats \, x y z). It calculates the Euclidean distance
+between sucessive frames and then differentiates it frame by frame.
+See example below.;
+#X text 340 247 the same process:;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 1 0 8 0;
+#X connect 1 0 11 0;
+#X connect 2 0 5 0;
+#X connect 2 0 13 1;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 5 0 13 0;
+#X connect 5 0 17 0;
+#X connect 5 0 20 0;
+#X connect 6 0 5 1;
+#X connect 6 0 13 2;
+#X connect 7 0 6 0;
+#X connect 8 0 7 0;
+#X connect 9 0 5 2;
+#X connect 9 0 13 3;
+#X connect 10 0 9 0;
+#X connect 11 0 10 0;
+#X connect 13 0 16 0;
+#X connect 14 0 13 0;
+#X connect 16 0 12 0;
+#X connect 17 0 18 0;
+#X connect 20 0 21 0;
+#X connect 21 0 22 0;

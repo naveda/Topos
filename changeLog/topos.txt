@@ -1,0 +1,9 @@
+2014/3/23-20:36- Modificado argumentos sem conexao com referenceSphere
+;
+2014/3/23-22:10- number of outlets changed;
+2014/3/23-22:12- Topos clumsy features available throug;
+2014/3/23-22:12- receives;
+2014/4/13-21:53- added metro stop;
+2014/4/13-21:53- fixed start errors with stop metro;
+2014/8/14-19:43- changed meanLastFirst list management;
+2014/8/14-20:0- fixed initialization array errors;

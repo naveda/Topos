@@ -1,0 +1,39 @@
+#N canvas 0 22 861 383 10;
+#X declare -path mtl;
+#X declare -lib iem_tab;
+#X declare -lib iem_tab;
+#X text 42 260 USAGE;
+#X text 444 25 FEATURES;
+#X text 267 186 RETRIEVE FEATURES;
+#X text 490 46 volume: total volume (f) of the bounding rectangular
+parallelepiped;
+#X text 492 82 xyzRange: range of each dimension (f f f);
+#X text 490 108 meanPosition: mean position of the topology (f f f)
+;
+#X text 491 138 speed: instantaneous velocity;
+#X text 489 164 inPoints: actual 3d point projected onto the topology
+;
+#X text 488 193 getPosPoint: when the message [getPosition N( is sent
+to the 1st inlet \, the abstraction returns the positon of the N point
+in the topology;
+#X text 489 238 centerPointsAvr: Average distance between all points
+and the centroid of the topology;
+#X text 489 275 centerPointsStd: Standar deviation of the distance
+between all points and the centroid of the topology.;
+#X obj 140 32 cnv 15 25 150 empty empty empty 20 12 0 14 -261234 -66577
+0;
+#X msg 35 103 getPosition 1;
+#X text 24 12 Extracts features from a [topos] object;
+#X text 174 121 ARGUMENT 2: feature to be routed to the 2nd outlet
+;
+#X text 236 57 Topos object that generates the data;
+#X obj 48 203 route volume xyzRange meanPosition speed displacement
+inPoints getPosPoint centerPointsAvr centerPointsStd centerPointsDist
+;
+#X obj 105 57 topos link xyz 100 10;
+#X text 175 91 ARGUMENT 1: symbol that links the source [topos];
+#X text 56 280 [toposFeatures link];
+#X obj 722 -6 topos.features;
+#X obj 49 145 topos.features link volume;
+#X connect 12 0 21 0;
+#X connect 21 0 16 0;

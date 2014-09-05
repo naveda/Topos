@@ -1,0 +1,53 @@
+#N canvas 605 87 662 476 10;
+#X obj 48 277 topos.gemwin;
+#X obj 453 130 gemhead;
+#X obj 453 156 rotateXYZ 90 90 90;
+#X obj 452 207 cube;
+#X obj 452 183 color 0.5 0.5 0.5;
+#X obj 547 80 metro 100;
+#X obj 546 106 counter;
+#X obj 547 57 loadbang;
+#X floatatom 545 130 5 0 0 0 - - -;
+#X msg 47 174 size 100 100;
+#X obj 314 173 gemwin;
+#X text 131 225 Size of the window;
+#X text 195 339 Background color;
+#X text 291 232 Light;
+#X text 349 327 FPS (accept changes);
+#X text 412 232 DSP diagnostics;
+#X text 141 172 Inlet redirects messages to;
+#X text 44 12 [topos.gemwin];
+#X obj 53 315 cnv 15 4 60 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 51 403 Resets orientation (mouse on windows changes orientation)
+;
+#X obj 187 315 cnv 15 4 40 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 77 319 [topos.gemwin];
+#X text 46 63 The window can be changed using the inlet (see help for
+[gemwin]) and also accepts changes of the camera orientation via mouse
+over window. Changes in orientation are reset using the bang reset.
+;
+#X obj 336 315 cnv 15 4 40 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 393 233 cnv 15 4 40 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 273 233 cnv 15 4 40 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 113 228 cnv 15 4 40 empty empty empty 20 12 0 14 -128992 -260097
+0;
+#X text 50 374 Creates and destroys window CLICK on the gemWin for
+the window;
+#X text 37 254 Click here;
+#X text 46 36 Creates and changes characteristics of the GEM window
+;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 4 0 3 0;
+#X connect 5 0 6 0;
+#X connect 6 0 8 0;
+#X connect 7 0 5 0;
+#X connect 8 0 2 3;
+#X connect 8 0 2 2;
+#X connect 8 0 2 1;
+#X connect 9 0 0 0;

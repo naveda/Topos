@@ -1,0 +1,65 @@
+#N canvas 161 442 793 458 10;
+#X msg 169 246 get \$1;
+#X obj 171 224 hradio 15 1 0 12 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X msg 169 132 stop;
+#X msg 172 107 record \$1;
+#X msg 172 179 clear;
+#X obj 173 86 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 130 353 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 169 156 flush;
+#X msg 173 202 reset;
+#N canvas 806 406 450 300 message 0;
+#X obj 91 55 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 186 103 mod 4;
+#X floatatom 186 127 5 0 0 0 - - -;
+#X obj 193 152 sel 0 1 2 3;
+#X msg 192 183 blue;
+#X msg 312 185 0.4 0.2;
+#X obj 105 215 pp;
+#X obj 97 126 + 63;
+#X obj 92 100 random 12;
+#X obj 87 19 inlet;
+#X obj 105 252 outlet;
+#X msg 233 182 alpha 0.4;
+#X obj 92 76 metro 50;
+#X connect 0 0 12 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 1 11 0;
+#X connect 3 2 5 0;
+#X connect 4 0 6 0;
+#X connect 5 0 6 0;
+#X connect 6 0 10 0;
+#X connect 7 0 6 1;
+#X connect 8 0 1 0;
+#X connect 8 0 7 0;
+#X connect 9 0 0 0;
+#X connect 11 0 6 0;
+#X connect 12 0 8 0;
+#X restore 172 300 pd message generator;
+#X obj 171 323 pddp/print;
+#X obj 172 276 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 35 384 pddp/print;
+#X text 153 356 empty slot;
+#X text 141 65 index of actual point;
+#X obj 50 40 topos a xyz 100 10;
+#X obj 37 328 topos.quality tag;
+#X connect 0 0 16 0;
+#X connect 1 0 0 0;
+#X connect 2 0 16 0;
+#X connect 3 0 16 0;
+#X connect 4 0 16 0;
+#X connect 5 0 3 0;
+#X connect 7 0 16 0;
+#X connect 8 0 16 0;
+#X connect 9 0 10 0;
+#X connect 9 0 16 1;
+#X connect 11 0 9 0;
+#X connect 16 0 12 0;
+#X connect 16 1 6 0;

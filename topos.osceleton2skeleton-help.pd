@@ -1,0 +1,129 @@
+#N canvas 0 22 743 885 10;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X obj 73 139 pipelist;
+#X obj 74 116 unpackOSC;
+#X obj 73 91 udpreceive 7110;
+#X floatatom 278 235 5 0 0 0 - - -;
+#X msg 276 201 body;
+#X msg 277 174 world;
+#X obj 68 301 route r_knee;
+#X obj 280 119 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 274 143 onOff \$1;
+#X obj 69 257 topos.osceleton2skeleton body 3 1;
+#X text 69 394 Related Objects:;
+#X text 337 136 Switches 0/1 the broadcasting of the data;
+#X obj 330 333 topos.skeleton 1;
+#X obj 329 414 route data;
+#X obj 329 390 r skeleton/1/l_hand/messages;
+#X text 326 223 ARGUMENT 2: Changes the scale of the skeleton;
+#X text 331 172 ARGUMENT 1 : changes spatial reference. World does
+not change data from the kinect. Body will make the position of the
+torso always 0 0 0;
+#X text 326 277 ARGUMENT 3: Sends the data to topos.skeleton N For
+example \, if argument = 1 it will broadcast data to topos.skeleton
+number 1:;
+#X obj 514 447 info_about_body_namespaces;
+#X text 74 56 Get data from osceleton;
+#X text 73 70 https://github.com/Sensebloom/OSCeleton;
+#X text 329 364 It is also possible to retreive data using this receive:
+;
+#X obj 328 436 unpack f f f;
+#X text 327 456 x y z;
+#X obj 68 419 topos.skeleton;
+#X obj 67 441 topos.synapse2skeleton;
+#X obj 62 816 cnv 15 550 20 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 10 -6 cnv 15 550 40 empty \$0-pddp.cnv.header myobjectclass
+3 12 0 18 -204280 -1 0;
+#X obj 61 486 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 15 12 0
+13 -228856 -1 0;
+#N canvas 779 22 494 344 META 1;
+#X text 12 25 KEYWORDS control number float store;
+#X text 12 45 LICENSE GPL;
+#X text 12 65 TEMPLATE template-help.pd v0.1;
+#X text 12 85 PLATFORM windows macosx gnulinux;
+#X text 12 105 DATATYPE float list;
+#X text 12 5 GENRE storage;
+#X text 12 125 LIBRARY internal;
+#X text 12 145 WEBSITE http://crca.ucsd.edu/~msp/;
+#X text 12 165 RELEASE_DATE 2007-08-24;
+#X text 12 185 RELEASE_VERSION 0.40-test05;
+#X restore 562 818 pd META;
+#X obj 61 636 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlet 15 12 0
+13 -228856 -1 0;
+#X obj 61 686 cnv 3 550 3 empty \$0-pddp.cnv.argument argument 15 12
+0 13 -228856 -1 0;
+#X obj 61 736 cnv 3 550 3 empty \$0-pddp.cnv.more_info more_info 15
+12 0 13 -228856 -1 0;
+#X obj 130 592 cnv 17 3 40 empty \$0-pddp.cnv.let.1 1 5 9 0 16 -228856
+-162280 0;
+#X obj 130 506 cnv 17 3 80 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#X text 160 704 [float] accepts a single number as a creation argument
+which sets value that is stored.;
+#N canvas 309 454 795 459 guts 1;
+#X obj 117 95 textfile;
+#X msg 116 24 symbol template-HCS.pd;
+#X msg 116 54 read \$1 \, rewind \, bang;
+#X obj 117 141 trigger bang anything;
+#X obj 58 117 bang;
+#X obj 240 162 route #X;
+#X obj 240 183 route text;
+#X obj 240 250 route DESCRIPTION;
+#X obj 239 276 print;
+#X obj 140 277 print TEXT;
+#X msg 389 81 \; \$0-pddp.cnv.header label symbol topos/osceleton2skeleton
+;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 3 1 5 0;
+#X connect 4 0 0 0;
+#X connect 5 0 6 0;
+#X connect 7 0 8 0;
+#X restore 511 818 pd guts;
+#X text 160 505 BANG - bang means do it!;
+#X text 160 525 FLOAT - what does a number do?;
+#X text 161 545 LIST - what does a list do?;
+#X text 160 592 FLOAT - how about a float on the cold inlet?;
+#X text 160 565 POINTER - does this object handle pointers;
+#X text 161 654 FLOAT - what kind of output comes out of here?;
+#X text 116 771 (put links to other help patches \, about patches \,
+links to the HTML manual \, and/or external links);
+#X text 204 610 (if you want longer lines \, you can use [cyclone/comment])
+;
+#X text 10 16 description: receives data from osceleton and prepares
+it to display and process;
+#X obj 337 -3 topos.osceleton2skeleton;
+#X text 337 17 Topos Library;
+#X text 434 17 http://naveda.info;
+#X obj 510 391 r pos/1/l_hand;
+#X connect 0 0 9 0;
+#X connect 1 0 0 0;
+#X connect 1 1 0 1;
+#X connect 2 0 1 0;
+#X connect 3 0 9 1;
+#X connect 4 0 9 0;
+#X connect 5 0 9 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 6 0;
+#X connect 13 0 22 0;
+#X connect 14 0 13 0;
+#X connect 49 0 13 0;

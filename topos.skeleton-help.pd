@@ -1,0 +1,14 @@
+#N canvas 0 22 512 483 10;
+#X obj 48 204 topos.skeleton 1;
+#X obj 51 122 gemhead;
+#X obj 50 176 translateXYZ;
+#X floatatom 105 144 5 0 0 0 - - -;
+#X floatatom 139 144 5 0 0 0 - - -;
+#X floatatom 195 146 5 0 0 0 - - -;
+#X obj 40 -8 topos.osceleton2skeleton body 1;
+#X obj 292 157 r ske/1/l_hand;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 1;
+#X connect 4 0 2 2;
+#X connect 5 0 2 3;

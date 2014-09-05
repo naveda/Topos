@@ -1,0 +1,26 @@
+#N canvas 0 22 534 425 10;
+#X obj 34 184 route instability sumVelocity 3dAngle 3dDistance;
+#X msg 140 35 color 0 0 0;
+#X msg 140 59 alpha 0.5;
+#X obj 37 6 gemhead;
+#X obj 121 109 pack f f f;
+#X obj 430 -61 topos.geo.2;
+#X obj 35 149 topos.geo.2 tag point1 point2;
+#X obj 206 121 pack f f f;
+#X text 121 90 x y z;
+#X text 223 99 x y z;
+#X text 23 -60 [topos.geo.2];
+#X msg 141 10 debug 1;
+#X text 150 222 gemhead allows visual inspection. However \, gem processing
+is optional.;
+#X text 149 262 broadcasts features to topos.geo.2/tag/features;
+#X msg 198 12 debug 0;
+#X text 25 -42 Extracts geometrical features between two 3d points
+;
+#X connect 1 0 6 0;
+#X connect 2 0 6 0;
+#X connect 3 0 6 0;
+#X connect 4 0 6 1;
+#X connect 6 0 0 0;
+#X connect 7 0 6 2;
+#X connect 11 0 6 0;

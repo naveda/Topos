@@ -1,0 +1,27 @@
+#N canvas 0 22 450 300 10;
+#X obj 63 116 unpack f f;
+#X floatatom 64 137 5 0 0 0 - - -;
+#X floatatom 120 137 5 0 0 0 - - -;
+#X obj 188 67 tgl 15 0 empty empty onOff_interaction 17 7 0 10 -262144
+-1 -1 0 1;
+#X text 42 189 USAGE;
+#X text 173 125 outputs the element in the topology and the;
+#X text 173 141 instantaneous velocity;
+#X text 42 229 You can also get features from the interaction here:
+;
+#X obj 64 58 gemhead;
+#X obj 46 276 route element velocity minDistance posExplosion;
+#X text 45 165 Inlets gemhead IndexTopology IndexSphere threshDisntance
+;
+#X text 50 18 Outputs the interaction between a reference sphere and
+the points of a topology;
+#X obj 62 91 toposInteract 3 1 0.3;
+#X text 46 201 [toposInteract IndexSphere IndexTopology threshDisntance]
+;
+#X obj 46 250 r interact/3/1/feat;
+#X connect 0 0 1 0;
+#X connect 0 1 2 0;
+#X connect 3 0 12 1;
+#X connect 8 0 12 0;
+#X connect 12 0 0 0;
+#X connect 14 0 9 0;

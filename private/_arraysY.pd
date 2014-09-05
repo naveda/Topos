@@ -1,0 +1,16 @@
+#N canvas 0 22 493 379 10;
+#X obj 172 45 table \$0-y-head;
+#X obj 161 173 table \$0-y-torso;
+#X obj 175 89 table \$0-y-neck;
+#X obj 279 117 table \$0-y-r_shoulder;
+#X obj 354 143 table \$0-y-r_elbow;
+#X obj 0 168 table \$0-y-r_hand;
+#X obj -44 173 table \$0-y-l_hand;
+#X obj 0 121 table \$0-y-l_shoulder;
+#X obj 14 142 table \$0-y-l_elbow;
+#X obj 219 0 table \$0-y-r_hip;
+#X obj 213 278 table \$0-y-r_knee;
+#X obj 218 325 table \$0-y-r_foot;
+#X obj 85 323 table \$0-y-l_foot;
+#X obj 0 276 table \$0-y-l_knee;
+#X obj 86 238 table \$0-y-l_hip;

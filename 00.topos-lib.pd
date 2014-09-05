@@ -1,0 +1,14 @@
+#N canvas 2411 193 539 278 10;
+#X declare -lib iem_tab;
+#X declare -lib iem_tab;
+#X obj 55 155 topos.skeleton 1;
+#X obj 55 96 topos.quality;
+#X obj 55 182 topos.rec;
+#X obj 55 209 topos.rec.slave;
+#X obj 228 32 topos.geo.2 ID xyz1 xyz2;
+#X obj 228 65 topos.geo.4 ID xyz1 xyz2 xyz3 xyz4;
+#X obj 225 189 topos.rel.points ID xyz1 xyz2 0.3;
+#X obj 225 217 topos.rel.pointRegion ID xyz1 IDtopos 0.3;
+#X obj 54 66 topos.features ID;
+#X obj 54 34 topos ID xyz1 100 20;
+#X obj 225 160 topos.rel.regions ID IDtopos1 IDtopos2 0.3;

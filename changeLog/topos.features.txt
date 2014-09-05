@@ -1,0 +1,2 @@
+2014/3/27-12:6- changed speed and discplacement;
+2014/3/27-12:6- for mean position of the point cloud;

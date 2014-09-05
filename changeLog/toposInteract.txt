@@ -1,0 +1,6 @@
+2014/3/23-20:39- Argumento para desvinculação de refSpehere. Acionando
+argumento de debounce;
+2014/3/23-20:39- Argumento para desvinculação de refSpehere. Acionando
+argumento de debounce;
+2014/3/23-22:52- cahnged outlets to conform with librar;
+2014/3/23-22:54- first outlet outputs features;
