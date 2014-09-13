@@ -1,26 +1,108 @@
-#N canvas 15 22 450 300 10;
-#X msg 90 127 record \$1;
-#X obj 96 105 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#N canvas 641 70 597 823 10;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X msg 73 203 record \$1;
+#X obj 74 185 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X msg 158 128 play;
-#X msg 197 129 stop;
-#X floatatom 53 226 5 0 0 0 - - -;
-#X msg 246 125 loop \$1;
-#X obj 260 100 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
-#X obj 306 129 pp load;
-#X obj 263 77 ii 1;
-#X obj 228 187 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X msg 75 61 write data/test1.txt;
-#X obj 48 199 topos.rec 1;
-#X connect 0 0 11 0;
+#X msg 59 111 play;
+#X msg 65 134 stop;
+#X floatatom 34 293 5 0 0 0 - - -;
+#X obj 35 266 topos.rec 1;
+#X obj 30 419 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#X obj 34 501 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 34 598 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8 12
+0 13 -228856 -1 0;
+#X obj 34 674 cnv 3 550 3 empty \$0-pddp.cnv.more_info more_info 8
+12 0 13 -228856 -1 0;
+#N canvas 246 467 347 217 Related_objects 0;
+#X obj 0 0 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12 0
+14 -204280 -1 0;
+#X text 6 1 Related Objects;
+#X obj 30 124 topos.synapse2skeleton body 3 1;
+#X obj 29 154 topos.skeleton 1;
+#X restore 305 783 pd Related_objects;
+#X obj 33 3 cnv 15 552 40 empty cnv.header topos.rec 3 12 0 18 -204280
+-1 0;
+#X obj 108 428 cnv 17 3 42 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#N canvas 496 267 494 344 META 0;
+#X text 12 25 LICENSE LGPL v2.1;
+#X text 18 165 AUTHOR Luiz Naveda;
+#X text 15 185 WEBSITE http://naveda.info;
+#X text 15 204 HELP_PATCH_AUTHORS "pd meta" information added by Luiz
+Naveda for 0.43.4-extended;
+#X text 12 5 KEYWORDS;
+#X text 12 45 DESCRIPTION;
+#X text 14 79 INLET_0;
+#X text 14 99 INLET_1;
+#X text 14 119 INLET_2;
+#X text 17 142 OUTLET_0;
+#X restore 480 784 pd META;
+#N canvas 317 454 504 212 guts 1;
+#X msg 79 104 cnv.header vis_size 650 60;
+#X msg 81 65 \; cnv.header label topos.rec;
+#X restore 429 783 pd guts;
+#X text 364 25 Topos Library;
+#X text 471 27 http://naveda.info;
+#X msg 48 58 load;
+#X obj 334 56 topos.gemwin;
+#X msg 69 162 loop 1;
+#X text 147 205 1: start / 0: stop;
+#X msg 81 229 write movs/test1.txt;
+#X text 194 261 <- indicates incoming data flow;
+#X obj 424 195 gemhead;
+#X text 45 26 Records \, plays and broadcasts motion capture data;
+#X msg 55 84 load movs/ex2.txt;
+#X text 141 431 LIST - Control messages and messages from [topos.osceleton2skeleton]
+and [topos.synapse2skeleton];
+#X obj 108 306 pddp/print;
+#X obj 179 343 pddp/print;
+#X text 183 373 motion capture data;
+#X obj 423 218 topos.skeleton 1;
+#X obj 326 378 01-info_about_body_namespaces;
+#X obj 121 610 cnv 17 3 42 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#X text 145 616 INTEGER - Symbolic link to topos.skeleton.;
+#X obj 432 6 topos.rec 1;
+#X text 213 104 [topos.rec] records data coming from [topos.osceleton2skeleton]
+and [topos.synapse2skeleton]. Additional commands allow the object
+to read \, play and write files.;
+#X text 149 691 In the folder /matlab there are functions that allow
+importing and exporting data do matlab. Exporting data from matlab
+is realized by using MocapToolbox structures.More infor here:;
+#X obj 35 755 pddplink https://www.jyu.fi/hum/laitokset/musiikki/en/research/coe/materials/mocaptoolbox
+;
+#X text 278 167 [topos.rec 1] broadcasts motion capture data to [topos.skeleton
+1]:;
+#X text 89 59 open dialog box;
+#X text 170 83 load file;
+#X text 111 526 1 - recording time;
+#X text 111 543 2 - end of file (based on qlist);
+#X text 113 563 2 - data;
+#X connect 0 0 5 0;
 #X connect 1 0 0 0;
-#X connect 2 0 11 0;
-#X connect 3 0 11 0;
-#X connect 5 0 11 0;
-#X connect 6 0 5 0;
-#X connect 7 0 11 0;
-#X connect 8 0 6 0;
-#X connect 10 0 11 0;
-#X connect 11 0 4 0;
+#X connect 2 0 5 0;
+#X connect 3 0 5 0;
+#X connect 5 0 4 0;
+#X connect 5 1 27 0;
+#X connect 5 2 28 0;
+#X connect 17 0 5 0;
+#X connect 19 0 5 0;
+#X connect 21 0 5 0;
+#X connect 23 0 30 0;
+#X connect 25 0 5 0;

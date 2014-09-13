@@ -1,8 +1,0 @@
-2014/3/20-15:16- test2;
-2014/3/20-15:16- test2w;
-2014/3/20-15:16- test2w;
-2014/3/23-20:36- Modificado argumentos sem conexao com referenceSphere
-;
-2014/3/23-20:36- Modificado argumentos sem conexao com referenceSphere
-;
-2014/3/23-20:36- objeto reference sphere deletado;

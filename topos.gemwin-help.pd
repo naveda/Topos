@@ -1,46 +1,87 @@
-#N canvas 605 87 662 476 10;
+#N canvas 605 87 634 730 10;
 #X obj 48 277 topos.gemwin;
-#X obj 453 130 gemhead;
-#X obj 453 156 rotateXYZ 90 90 90;
-#X obj 452 207 cube;
-#X obj 452 183 color 0.5 0.5 0.5;
-#X obj 547 80 metro 100;
-#X obj 546 106 counter;
-#X obj 547 57 loadbang;
-#X floatatom 545 130 5 0 0 0 - - -;
+#X obj 409 262 gemhead;
+#X obj 409 288 rotateXYZ 90 90 90;
+#X obj 408 339 cube;
+#X obj 408 315 color 0.5 0.5 0.5;
+#X obj 503 212 metro 100;
+#X obj 502 238 counter;
+#X obj 503 189 loadbang;
+#X floatatom 501 262 5 0 0 0 - - -;
 #X msg 47 174 size 100 100;
 #X obj 314 173 gemwin;
-#X text 131 225 Size of the window;
-#X text 195 339 Background color;
-#X text 291 232 Light;
-#X text 349 327 FPS (accept changes);
-#X text 412 232 DSP diagnostics;
+#X text 149 210 Size of the window;
+#X text 246 250 Background color;
+#X text 232 325 FPS (accept changes);
 #X text 141 172 Inlet redirects messages to;
-#X text 44 12 [topos.gemwin];
 #X obj 53 315 cnv 15 4 60 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X text 51 403 Resets orientation (mouse on windows changes orientation)
 ;
-#X obj 187 315 cnv 15 4 40 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 215 314 cnv 15 4 40 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X text 77 319 [topos.gemwin];
-#X text 46 63 The window can be changed using the inlet (see help for
-[gemwin]) and also accepts changes of the camera orientation via mouse
-over window. Changes in orientation are reset using the bang reset.
-;
-#X obj 336 315 cnv 15 4 40 empty empty empty 20 12 0 14 -233017 -66577
+#X text -16 70 The window can be changed using the inlet (see help
+for [gemwin]) and also accepts changes of the camera orientation via
+mouse over window. Changes in orientation are reset using the bang
+reset.;
+#X obj 236 236 cnv 15 4 40 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 393 233 cnv 15 4 40 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 113 316 cnv 15 4 40 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 273 233 cnv 15 4 40 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 159 230 cnv 15 4 40 empty empty empty 20 12 0 14 -128992 -260097
 0;
-#X obj 113 228 cnv 15 4 40 empty empty empty 20 12 0 14 -128992 -260097
-0;
-#X text 50 374 Creates and destroys window CLICK on the gemWin for
+#X text 49 374 Creates and destroys window CLICK on the gemWin for
 the window;
-#X text 37 254 Click here;
-#X text 46 36 Creates and changes characteristics of the GEM window
-;
+#X text -25 274 Click here;
+#X text 408 227 Example:;
+#X text 118 338 DSP on/off and diagnostics;
+#X obj -15 -32 cnv 15 552 40 empty cnv.header topos.gemwin 3 12 0 18
+-204280 -1 0;
+#X text -3 -9 usage guide for internal help patches;
+#X text 316 -10 Topos Library;
+#X text 423 -8 http://naveda.info;
+#X obj -2 432 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#X obj -4 508 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj -4 545 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8 12
+0 13 -228856 -1 0;
+#X obj -3 594 cnv 3 550 3 empty \$0-pddp.cnv.more_info more_info 8
+12 0 13 -228856 -1 0;
+#N canvas 246 467 428 109 Related_objects 0;
+#X obj 0 0 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12 0
+14 -204280 -1 0;
+#X text 6 1 Related Objects;
+#X obj 30 46 gemwin;
+#X restore 316 633 pd Related_objects;
+#X obj 76 441 cnv 17 3 42 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#N canvas 496 267 494 344 META 0;
+#X text 12 25 LICENSE LGPL v2.1;
+#X text 18 165 AUTHOR Luiz Naveda;
+#X text 15 185 WEBSITE http://naveda.info;
+#X text 15 204 HELP_PATCH_AUTHORS "pd meta" information added by Luiz
+Naveda for 0.43.4-extended;
+#X text 12 5 KEYWORDS;
+#X text 12 45 DESCRIPTION;
+#X text 14 79 INLET_0;
+#X text 14 99 INLET_1;
+#X text 14 119 INLET_2;
+#X text 17 142 OUTLET_0;
+#X restore 491 634 pd META;
+#N canvas 317 454 504 212 guts 0;
+#X msg 79 104 cnv.header vis_size 650 60;
+#X msg 81 65 \; cnv.header label topos.gemwin;
+#X restore 440 633 pd guts;
+#X text 440 -30 [topos.gemwin];
+#X text 214 135 comment;
+#X text 95 443 Inlet redirects messages to gemwin. All messages follow
+gemwin objects;
+#X text -16 43 Creates and changes characteristics of the GEM window
+and controls DSP audio (on off);
+#X text 360 37 Mouse controls:;
+#X text 360 59 - left button + drag: rotate camera;
+#X text 363 79 - right button + drag: zoom;
 #X connect 1 0 2 0;
 #X connect 2 0 4 0;
 #X connect 4 0 3 0;

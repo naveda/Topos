@@ -1,3 +1,0 @@
-todo 2014/3/23-23:1- objeto de disparo de aproximação;
-todo 2014/3/23-23:1- com visualização;
-todo 2014/3/23-23:1- ;
