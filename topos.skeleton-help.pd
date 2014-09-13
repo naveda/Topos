@@ -1,14 +1,80 @@
-#N canvas 0 22 512 483 10;
-#X obj 48 204 topos.skeleton 1;
-#X obj 51 122 gemhead;
-#X obj 50 176 translateXYZ;
-#X floatatom 105 144 5 0 0 0 - - -;
-#X floatatom 139 144 5 0 0 0 - - -;
-#X floatatom 195 146 5 0 0 0 - - -;
-#X obj 40 -8 topos.osceleton2skeleton body 1;
-#X obj 292 157 r ske/1/l_hand;
+#N canvas 466 70 617 779 10;
+#X obj 35 244 topos.skeleton 1;
+#X obj 38 84 gemhead;
+#X obj 37 138 translateXYZ;
+#X floatatom 92 106 5 0 0 0 - - -;
+#X floatatom 126 106 5 0 0 0 - - -;
+#X floatatom 164 105 5 0 0 0 - - -;
+#X obj 228 385 r ske/1/l_hand;
+#X obj 31 441 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#X obj 33 583 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 33 620 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8 12
+0 13 -228856 -1 0;
+#X obj 35 670 cnv 3 550 3 empty \$0-pddp.cnv.more_info more_info 8
+12 0 13 -228856 -1 0;
+#N canvas 246 467 428 109 Related_objects 1;
+#X obj 0 0 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12 0
+14 -204280 -1 0;
+#X text 6 1 Related Objects;
+#X restore 340 711 pd Related_objects;
+#X obj 111 592 cnv 17 3 17 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#X obj 16 5 cnv 15 552 40 empty cnv.header topos.skeleton 3 12 0 18
+-204280 -1 0;
+#X obj 107 460 cnv 17 3 42 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#X obj 107 512 cnv 17 3 57 empty \$0-pddp.cnv.let.1 1 5 9 0 16 -228856
+-162280 0;
+#N canvas 496 267 494 344 META 0;
+#X text 12 25 LICENSE LGPL v2.1;
+#X text 18 165 AUTHOR Luiz Naveda;
+#X text 15 185 WEBSITE http://naveda.info;
+#X text 15 204 HELP_PATCH_AUTHORS "pd meta" information added by Luiz
+Naveda for 0.43.4-extended;
+#X text 12 5 KEYWORDS;
+#X text 12 45 DESCRIPTION;
+#X text 14 79 INLET_0;
+#X text 14 99 INLET_1;
+#X text 14 119 INLET_2;
+#X text 17 142 OUTLET_0;
+#X restore 515 712 pd META;
+#N canvas 317 454 504 212 guts 0;
+#X msg 79 104 cnv.header vis_size 650 60;
+#X msg 81 65 \; cnv.header label topos.skeleton;
+#X restore 464 711 pd guts;
+#X text 346 27 Topos Library;
+#X text 453 29 http://naveda.info;
+#X text 21 27 Draws a skeleton in a GEM window;
+#X text 140 471 LIST - Gem list;
+#X obj 319 69 topos.gemwin;
+#X obj 215 113 comment 0 12 helvetica ? 0 0 0 0 [topos.skeleton] receives
+pessages prepared in [topos.osceleton2skeleton] or [topos.synapse2skeleton]
+and draws a skeleton in the GEM;
+#X obj 258 274 r skeleton/[skeleton number]/[body part]/messages;
+#X text 140 513 LIST - Gem list;
+#X text 258 256 Messages are internally received as:;
+#X text 255 300 Therefore \, if you want to communicate to the;
+#X obj 30 333 comment 0 12 helvetica ? 0 0 0 0 Therefore \, if you
+want to communicate to the skeleton n. 1 \, body part left hand \,
+you must send messages to;
+#X obj 294 353 r skeleton/1/l_hand/messages;
+#X obj 29 383 comment 0 12 helvetica ? 0 0 0 0 The object also broadcasts
+data as;
+#X text 455 164 Change segments settings;
+#X text 417 193 Change joint;
+#X msg 291 197 colorJoint 0 1 0;
+#X msg 194 198 sizeJoint 10;
+#X msg 277 167 segParameters color 1 0 0;
+#X msg 195 167 segOnOff 1;
+#X obj 458 10 topos.skeleton 1;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X connect 3 0 2 1;
 #X connect 4 0 2 2;
 #X connect 5 0 2 3;
+#X connect 33 0 0 0;
+#X connect 34 0 0 0;
+#X connect 35 0 0 0;
+#X connect 36 0 0 0;

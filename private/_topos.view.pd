@@ -217,7 +217,7 @@
 #X obj -31 -39 inlet points;
 #X obj -127 153 t b f;
 #X obj 450 30 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 1270 1;
 #X obj 258 -45 inlet metro;
 #N canvas 27 32 611 666 makedata 0;
 #X obj -54 67 repeat;
@@ -411,7 +411,7 @@
 #X connect 26 0 28 0;
 #X connect 27 0 28 0;
 #X connect 28 0 15 0;
-#X restore -105 457 pd curve appearance;
+#X restore -105 440 pd curve appearance;
 #X floatatom -167 349 5 0 0 0 - - -;
 #X obj -256 423 scaleXYZ;
 #X obj -123 482 r topos/\$1/curveList;
@@ -611,7 +611,8 @@ randomActivity setPoint metro;
 #X obj 44 414 zexy/lister;
 #X msg 29 375 bang;
 #X floatatom -187 337 5 0 0 0 - - -;
-#X obj -252 517 private/mtl/gemsPolygon 10;
+#X obj -252 515 mtl/gemsPolygon 10;
+#X obj -135 557 pddp/print;
 #X connect 0 0 10 0;
 #X connect 1 0 0 0;
 #X connect 2 0 3 0;
@@ -627,6 +628,7 @@ randomActivity setPoint metro;
 #X connect 13 0 10 1;
 #X connect 14 0 61 0;
 #X connect 15 0 70 0;
+#X connect 15 0 71 0;
 #X connect 16 0 31 1;
 #X connect 17 0 31 0;
 #X connect 18 0 20 0;

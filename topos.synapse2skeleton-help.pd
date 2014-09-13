@@ -1,4 +1,4 @@
-#N canvas 602 482 450 300 10;
+#N canvas 1019 52 660 770 10;
 #X declare -lib mrpeach;
 #X declare -lib mrpeach;
 #X declare -lib mrpeach;
@@ -14,20 +14,109 @@
 #X declare -lib mrpeach;
 #X declare -lib mrpeach;
 #X declare -lib mrpeach;
-#X obj 13 144 topos.synapse2skeleton body 3 1;
-#N canvas 0 22 450 278 (subpatch) 0;
-#X obj 44 49 cnv 15 200 200 empty empty empty 20 12 0 14 -258113 -66577
-0;
-#X coords 0 -1 1 1 3 60 1 50 50;
-#X restore 164 80 graph;
-#X obj 15 58 pipelist;
-#X obj 16 35 unpackOSC;
-#X obj 17 10 udpreceive 12347;
-#X obj 303 34 topos.gw;
-#X obj 103 214 topos.skeleton 1;
-#X obj 103 190 gemhead;
-#X connect 2 0 0 0;
-#X connect 3 0 2 0;
-#X connect 3 1 2 1;
-#X connect 4 0 3 0;
-#X connect 7 0 6 0;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X declare -lib mrpeach;
+#X obj 49 195 pipelist;
+#X obj 50 172 unpackOSC;
+#X obj 51 147 udpreceive 12347;
+#X floatatom 256 262 5 0 0 0 - - -;
+#X msg 254 228 body;
+#X msg 255 201 world;
+#X obj 46 328 route r_knee;
+#X obj 258 146 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 252 170 onOff \$1;
+#X text 311 124 Switches 0/1 the broadcasting of the data;
+#X obj 317 405 route data;
+#X obj 317 381 r skeleton/1/l_hand/messages;
+#X text 314 214 ARGUMENT 2: Changes the scale of the skeleton;
+#X text 319 163 ARGUMENT 1 : changes spatial reference. World does
+not change data from the kinect. Body will make the position of the
+torso always 0 0 0;
+#X text 314 268 ARGUMENT 3: Sends the data to topos.skeleton N For
+example \, if argument = 1 it will broadcast data to topos.skeleton
+number 1:;
+#X text 49 96 Get data from osceleton;
+#X text 317 355 It is also possible to retreive data using this receive:
+;
+#X obj 316 427 unpack f f f;
+#X text 318 451 x y z;
+#X obj 18 16 cnv 15 650 60 empty cnv.header topos.synapse2skeleton
+3 12 0 18 -204280 -1 0;
+#X obj 54 476 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 15 12 0
+13 -228856 -1 0;
+#X obj 55 599 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlet 15 12 0
+13 -228856 -1 0;
+#X obj 50 666 cnv 3 550 3 empty \$0-pddp.cnv.more_info more_info 15
+12 0 13 -228856 -1 0;
+#X obj 124 555 cnv 17 3 40 empty \$0-pddp.cnv.let.1 1 5 9 0 16 -228856
+-162280 0;
+#N canvas 317 454 504 212 guts 0;
+#X msg 79 104 cnv.header vis_size 650 60;
+#X msg 81 65 \; cnv.header label topos.synapse2skeleton;
+#X restore 512 716 pd guts;
+#X text 21 42 description: receives data from osceleton and prepares
+it to display and process;
+#X text 445 43 Topos Library;
+#X text 553 43 http://naveda.info;
+#X obj 501 381 r pos/1/l_hand;
+#X obj 439 640 01-info_about_body_namespaces;
+#N canvas 213 424 404 169 related 0;
+#X obj 15 58 topos.osceleton2skeleton;
+#X obj 16 36 topos.skeleton;
+#X restore 503 692 pd related objects;
+#N canvas 496 267 494 344 META 0;
+#X text 12 25 LICENSE LGPL v2.1;
+#X text 18 165 AUTHOR Luiz Naveda;
+#X text 15 185 WEBSITE http://naveda.info;
+#X text 15 204 HELP_PATCH_AUTHORS "pd meta" information added by Luiz
+Naveda for 0.43.4-extended;
+#X text 12 5 KEYWORDS;
+#X text 12 45 DESCRIPTION;
+#X text 14 79 INLET_0;
+#X text 14 99 INLET_1;
+#X text 14 119 INLET_2;
+#X text 17 142 OUTLET_0;
+#X restore 566 717 pd META;
+#X text 153 505 LIST - data from kinect via OSC;
+#X text 154 555 FLOAT -;
+#X text 198 573 (if you want longer lines \, you can use [cyclone/comment])
+;
+#X text 204 555 multiplies the;
+#X text 47 349 routes body data;
+#X text 214 306 new skeleton;
+#X obj 126 599 cnv 17 3 40 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X text 154 617 LISTS - list containing body positions;
+#X obj 50 109 pddplink http://synapsekinect.tumblr.com/;
+#X obj 450 22 topos.synapse2skeleton;
+#X obj 126 501 cnv 17 3 42 empty \$0-pddp.cnv.let.0 0 5 9 0 16 -228856
+-162280 0;
+#X obj 48 284 topos.synapse2skeleton body 3 1;
+#X obj 318 324 topos.skeleton 1;
+#X connect 0 0 43 0;
+#X connect 1 0 0 0;
+#X connect 1 1 0 1;
+#X connect 2 0 1 0;
+#X connect 3 0 43 1;
+#X connect 4 0 43 0;
+#X connect 5 0 43 0;
+#X connect 7 0 8 0;
+#X connect 8 0 43 0;
+#X connect 10 0 17 0;
+#X connect 11 0 10 0;
+#X connect 28 0 10 0;
+#X connect 43 0 6 0;

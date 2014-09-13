@@ -1,8 +1,0 @@
-#N canvas 0 22 450 300 10;
-#X declare -lib mrpeach;
-#X obj 95 124 syUnit head 1 0;
-#X text 95 161 USAGE;
-#X text 93 183 syUnit joint body world;
-#X text 72 25 Extracts and sends data from Synapse;
-#X text 89 63 get data from head using [receive head/body];
-#X text 92 81 or [receive head/world];

@@ -1,16 +1,17 @@
-#N canvas 161 442 793 458 10;
-#X msg 169 246 get \$1;
-#X obj 171 224 hradio 15 1 0 12 empty empty empty 0 -8 0 10 -262144
+#N canvas 278 46 631 813 10;
+#X declare -path mtl;
+#X msg 213 295 get \$1;
+#X obj 215 273 hradio 15 1 0 12 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
-#X msg 169 132 stop;
-#X msg 172 107 record \$1;
-#X msg 172 179 clear;
-#X obj 173 86 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X msg 215 171 stop;
+#X msg 213 147 record \$1;
+#X msg 215 223 clear;
+#X obj 214 126 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 130 353 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 136 409 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X msg 169 156 flush;
-#X msg 173 202 reset;
+#X msg 213 196 flush;
+#X msg 216 246 reset;
 #N canvas 806 406 450 300 message 0;
 #X obj 91 55 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
@@ -41,25 +42,150 @@
 #X connect 9 0 0 0;
 #X connect 11 0 6 0;
 #X connect 12 0 8 0;
-#X restore 172 300 pd message generator;
-#X obj 171 323 pddp/print;
-#X obj 172 276 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X restore 241 349 pd message generator;
+#X obj 244 375 pddp/print;
+#X obj 241 325 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 35 384 pddp/print;
-#X text 153 356 empty slot;
-#X text 141 65 index of actual point;
-#X obj 50 40 topos a xyz 100 10;
-#X obj 37 328 topos.quality tag;
+#X obj 31 468 pddp/print;
+#X text 23 219 index of actual point;
+#X obj 28 77 gemhead;
+#X text 82 80 Second inlet: x y z flots;
+#X text 25 57 First inlet: gemlist;
+#X text 255 175 stop internal clock;
+#X obj 28 142 topos symb d 100 10;
+#X floatatom 82 177 5 0 0 0 - - -;
+#X text 18 170 Gemlist;
+#X obj 13 514 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#X obj 18 617 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 17 733 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8 12
+0 13 -228856 -1 0;
+#X obj 17 809 cnv 3 550 3 empty \$0-pddp.cnv.more_info more_info 8
+12 0 13 -228856 -1 0;
+#N canvas 246 467 428 109 Related_objects 0;
+#X obj 0 0 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12 0
+14 -204280 -1 0;
+#X text 6 1 Related Objects;
+#X restore 344 854 pd Related_objects;
+#X obj 22 6 cnv 15 552 40 empty cnv.header topos.quality 3 12 0 18
+-204280 -1 0;
+#N canvas 496 267 494 344 META 0;
+#X text 12 25 LICENSE LGPL v2.1;
+#X text 18 165 AUTHOR Luiz Naveda;
+#X text 15 185 WEBSITE http://naveda.info;
+#X text 15 204 HELP_PATCH_AUTHORS "pd meta" information added by Luiz
+Naveda for 0.43.4-extended;
+#X text 12 5 KEYWORDS;
+#X text 12 45 DESCRIPTION;
+#X text 14 79 INLET_0;
+#X text 14 99 INLET_1;
+#X text 14 119 INLET_2;
+#X text 17 142 OUTLET_0;
+#X restore 519 855 pd META;
+#N canvas 317 454 504 212 guts 0;
+#X msg 79 104 cnv.header vis_size 650 60;
+#X msg 80 65 \; cnv.header label topos.quality;
+#X restore 468 854 pd guts;
+#X text 353 28 Topos Library;
+#X text 460 30 http://naveda.info;
+#X text 522 9 [topos];
+#X obj 323 54 topos.gemwin;
+#X floatatom 81 433 5 0 0 0 - - -;
+#X text 124 435 slot index;
+#X text 37 450 output;
+#X text 159 409 bang empty slots;
+#X obj 32 386 topos.quality symb;
+#X text 249 99 Records messages comming in the 3rd inlet according
+to indices of the 2nd inlet \, or indices collected from a Topos object
+refered in the first argument;
+#X text 253 194 Flush actual contents;
+#X text 258 225 Clear contents;
+#X text 258 248 Reset all internal parameters;
+#X msg 260 296 get 1;
+#X text 306 299 Outputs messages related to an index (0-n);
+#X text 34 29 records lists to indices of the poitn cloud;
+#N canvas 498 84 450 300 rand 0;
+#X obj 126 64 metro 1000;
+#X obj 126 38 ii 1;
+#X obj 159 40 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 127 140 line;
+#X msg 127 119 \$1 1000;
+#X obj 137 150 line;
+#X msg 137 129 \$1 1000;
+#X obj 147 160 line;
+#X msg 147 139 \$1 1000;
+#X obj 128 245 pack f f f;
+#X obj 132 273 outlet;
+#X obj 130 197 - 3;
+#X obj 140 207 - 3;
+#X obj 150 217 - 3;
+#X obj 127 94 random 6;
+#X obj 138 105 random 6;
+#X obj 147 114 random 6;
+#X floatatom 222 86 5 0 0 0 - - -;
+#X obj 217 131 / 2;
+#X obj 261 70 ii 10;
+#X connect 0 0 14 0;
+#X connect 0 0 15 0;
 #X connect 0 0 16 0;
 #X connect 1 0 0 0;
-#X connect 2 0 16 0;
-#X connect 3 0 16 0;
-#X connect 4 0 16 0;
-#X connect 5 0 3 0;
-#X connect 7 0 16 0;
-#X connect 8 0 16 0;
+#X connect 2 0 0 0;
+#X connect 3 0 11 0;
+#X connect 4 0 3 0;
+#X connect 5 0 12 0;
+#X connect 6 0 5 0;
+#X connect 7 0 13 0;
+#X connect 8 0 7 0;
 #X connect 9 0 10 0;
-#X connect 9 0 16 1;
 #X connect 11 0 9 0;
-#X connect 16 0 12 0;
-#X connect 16 1 6 0;
+#X connect 12 0 9 1;
+#X connect 13 0 9 2;
+#X connect 14 0 4 0;
+#X connect 15 0 6 0;
+#X connect 16 0 8 0;
+#X connect 17 0 16 1;
+#X connect 17 0 15 1;
+#X connect 17 0 14 1;
+#X connect 17 0 18 0;
+#X connect 18 0 13 1;
+#X connect 18 0 12 1;
+#X connect 18 0 11 1;
+#X connect 19 0 17 0;
+#X restore 50 112 pd rand mov generator;
+#X text 70 533 1 - Control messages;
+#X text 72 580 3 - INTEGER - Index that will be retrieved in the first
+outlet;
+#X text 33 661 LIST - Lists of any kind or lenght recorded in the internal
+cache;
+#X text 70 552 2 - INTEGER - Index where the incomming messages will
+be placed;
+#X text 32 690 INTEGER - Index of the actual messages;
+#X text 35 706 BANG - Bang if a retrieved index (3rd inlet) is empty
+;
+#X text 54 764 1 - symbolic link connecting the clock of a topos object
+;
+#X text 244 437 The [topos.quality] object records any sort of lists
+using the topos internal clock. This alows to project characteristics
+to the point clouds that can be transformed in interactive ideas using
+objects such as [topos.rel.poitRegion];
+#X connect 0 0 37 0;
+#X connect 1 0 0 0;
+#X connect 2 0 37 0;
+#X connect 3 0 37 0;
+#X connect 4 0 37 0;
+#X connect 5 0 3 0;
+#X connect 7 0 37 0;
+#X connect 8 0 37 0;
+#X connect 9 0 10 0;
+#X connect 9 0 37 2;
+#X connect 11 0 9 0;
+#X connect 14 0 18 0;
+#X connect 18 1 19 0;
+#X connect 19 0 37 1;
+#X connect 37 0 12 0;
+#X connect 37 1 33 0;
+#X connect 37 2 6 0;
+#X connect 42 0 37 0;
+#X connect 45 0 18 1;

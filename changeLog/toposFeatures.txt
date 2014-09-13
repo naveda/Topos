@@ -1,1 +1,0 @@
-2014/3/23-22:57- corrigida referiencia to refSphere;

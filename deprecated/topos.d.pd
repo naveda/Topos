@@ -1,6 +1,0 @@
-#N canvas 0 22 450 300 10;
-#X obj 245 95 topos.geo.displacement;
-#X obj 247 69 inlet;
-#X obj 253 126 outlet;
-#X connect 0 0 2 0;
-#X connect 1 0 0 0;
