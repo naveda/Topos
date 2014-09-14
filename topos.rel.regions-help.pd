@@ -1,4 +1,4 @@
-#N canvas 713 82 621 741 10;
+#N canvas 713 82 646 771 10;
 #X declare -path mtl;
 #X declare -path mtl;
 #X declare -lib iem_tab;
@@ -18,26 +18,26 @@ Naveda for 0.43.4-extended;
 #X text 14 79 INLET_0 gemlist and control;
 #X text 12 45 DESCRIPTION Extracts geometrical features between two
 3d points;
-#X restore 550 805 pd META;
+#X restore 550 835 pd META;
 #X obj 50 503 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
 -228856 -1 0;
 #X obj 54 571 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
 13 -228856 -1 0;
 #X obj 54 662 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8 12
 0 13 -228856 -1 0;
-#X obj 54 778 cnv 3 550 3 empty \$0-pddp.cnv.more_info more_info 8
+#X obj 54 808 cnv 3 550 3 empty \$0-pddp.cnv.more_info more_info 8
 12 0 13 -228856 -1 0;
 #N canvas 246 467 428 109 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty \$0-pddp.cnv.subheading empty 3 12 0
 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X restore 363 805 pd Related_objects;
+#X restore 363 835 pd Related_objects;
 #X obj 66 12 cnv 15 552 40 empty cnv.header topos.rel.pointRegion 3
 12 0 18 -204280 -1 0;
-#N canvas 398 460 504 212 guts 1;
+#N canvas 398 460 504 212 guts 0;
 #X msg 79 104 cnv.header vis_size 650 60;
 #X msg 81 65 \; cnv.header label topos.rel.regions;
-#X restore 487 805 pd guts;
+#X restore 487 835 pd guts;
 #X text 392 35 Topos Library;
 #X text 506 35 http://naveda.info;
 #N canvas 498 84 450 300 random 0;
@@ -108,11 +108,10 @@ Naveda for 0.43.4-extended;
 #X text 150 674 1 - symbolic link (used for broadcasting features;
 #X obj 286 342 route distanceFrom;
 #X obj 285 362 pddp/print;
-#X text 67 35 Detects relationships between 3D points;
 #X text 77 88 gemhead (optional) allows visual/debug inspection.;
 #X obj 248 163 gemhead;
 #X text 255 136 REGION TOPOS;
-#N canvas 766 483 450 300 debug 1;
+#N canvas 766 483 450 300 debug 0;
 #X msg -10 8 debug 1;
 #X msg -3 29 debug 0;
 #X msg 2 54 debug color 0 0 0;
@@ -128,8 +127,6 @@ Naveda for 0.43.4-extended;
 #X text 150 694 2 - receive the X Y Z coordinates (as in the 2nd inlet)
 ;
 #X text 149 715 3 - Symbolic link of the target [topos] region;
-#X text 149 735 4 - Threshold for interaction between points and point
-in the point cloud;
 #N canvas 498 84 450 300 random 0;
 #X obj 126 38 ii 1;
 #X obj 159 40 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -210,18 +207,24 @@ in the point cloud;
 #X text 140 597 2 - gemlist of the debug gemhead (region2);
 #X text 138 617 3 - features;
 #X obj 486 16 topos.rel.pointRegion;
-#X connect 0 0 40 0;
-#X connect 11 0 29 1;
+#X text 149 735 4 - Threshold for interaction between points and point
+in the point cloud. Since the collision depends on the radius of the
+spherical projection the threshold os specified as a factor of the
+average of the euclidean distances between the points and their geometric
+mean.;
+#X text 67 35 Detects relationships between 3D points and regions;
+#X connect 0 0 38 0;
+#X connect 11 0 27 1;
 #X connect 16 0 17 0;
-#X connect 20 0 29 0;
-#X connect 22 0 40 0;
-#X connect 26 0 28 1;
-#X connect 27 0 28 0;
+#X connect 19 0 27 0;
+#X connect 21 0 38 0;
+#X connect 24 0 26 1;
+#X connect 25 0 26 0;
+#X connect 29 0 32 0;
+#X connect 30 0 33 0;
 #X connect 31 0 34 0;
-#X connect 32 0 35 0;
-#X connect 33 0 36 0;
-#X connect 39 0 40 0;
-#X connect 40 2 16 0;
-#X connect 40 2 31 0;
-#X connect 40 2 32 0;
-#X connect 40 2 33 0;
+#X connect 37 0 38 0;
+#X connect 38 2 16 0;
+#X connect 38 2 29 0;
+#X connect 38 2 30 0;
+#X connect 38 2 31 0;

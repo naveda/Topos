@@ -53,7 +53,7 @@ Naveda for 0.43.4-extended;
 #X text 14 119 INLET_2;
 #X text 17 142 OUTLET_0;
 #X restore 480 784 pd META;
-#N canvas 317 454 504 212 guts 1;
+#N canvas 317 454 504 212 guts 0;
 #X msg 79 104 cnv.header vis_size 650 60;
 #X msg 81 65 \; cnv.header label topos.rec;
 #X restore 429 783 pd guts;

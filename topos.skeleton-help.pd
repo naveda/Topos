@@ -49,7 +49,7 @@ Naveda for 0.43.4-extended;
 #X text 21 27 Draws a skeleton in a GEM window;
 #X text 140 471 LIST - Gem list;
 #X obj 319 69 topos.gemwin;
-#X obj 215 113 comment 0 12 helvetica ? 0 0 0 0 [topos.skeleton] receives
+#X obj 191 121 comment 0 12 helvetica ? 0 0 0 0 [topos.skeleton] receives
 pessages prepared in [topos.osceleton2skeleton] or [topos.synapse2skeleton]
 and draws a skeleton in the GEM;
 #X obj 258 274 r skeleton/[skeleton number]/[body part]/messages;

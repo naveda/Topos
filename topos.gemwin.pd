@@ -247,10 +247,10 @@
 #X obj 240 23 loadbang;
 #X obj 253 264 any;
 #X msg 451 206 offset \$1 \$2;
-#X obj 212 120 nbx 5 12 0 2400 0 0 empty empty x -8 6 0 10 -262144
--1 -1 400 256;
-#X obj 212 105 nbx 5 12 0 2400 0 0 empty empty y -8 6 0 10 -262144
--1 -1 300 256;
+#X obj 212 105 nbx 5 12 0 2400 0 0 empty empty x -8 6 0 10 -262144
+-1 -1 800 256;
+#X obj 212 119 nbx 5 12 0 2400 0 0 empty empty y -8 6 0 10 -262144
+-1 -1 600 256;
 #X obj 283 106 tgl 10 0 empty empty wt/blk 17 7 0 10 -262144 -1 -1
 0 1;
 #X obj 882 114 sel 0 1;
@@ -259,7 +259,7 @@
 #X msg 156 320 create \, FSAA \$1 \, 1;
 #X obj 148 292 f 4;
 #X obj 165 119 nbx 2 12 0 2400 0 0 empty empty empty -19 6 0 10 -262144
--1 -1 14 256;
+-1 -1 34 256;
 #X obj 306 121 nbx 2 12 0 2400 0 0 empty empty FPS -20 6 0 10 -262144
 -1 -1 30 256;
 #X text 442 103 Dsp:;

@@ -1,4 +1,4 @@
-#N canvas 239 53 682 909 10;
+#N canvas 239 22 682 800 10;
 #X declare -lib mrpeach;
 #X declare -lib mrpeach;
 #X declare -lib mrpeach;
@@ -29,10 +29,7 @@
 #X obj 313 303 topos.skeleton 1;
 #X obj 312 384 route data;
 #X obj 312 360 r skeleton/1/l_hand/messages;
-#X text 309 193 ARGUMENT 2: Changes the scale of the skeleton;
-#X text 314 142 ARGUMENT 1 : changes spatial reference. World does
-not change data from the kinect. Body will make the position of the
-torso always 0 0 0;
+#X text 310 201 ARGUMENT 2: Changes the scale of the skeleton;
 #X text 309 247 ARGUMENT 3: Sends the data to topos.skeleton N For
 example \, if argument = 1 it will broadcast data to topos.skeleton
 number 1:;
@@ -94,6 +91,9 @@ Naveda for 0.43.4-extended;
 #X obj 132 636 cnv 17 3 40 empty empty 1 5 9 0 16 -228856 -162280 0
 ;
 #X text 160 654 LISTS - list containing body positions;
+#X text 314 142 ARGUMENT 1 : changes spatial reference. World does
+not change data from the kinect. Body will translate the body points
+to a reference where the torso is always at 0 0 0 position;
 #X connect 0 0 9 0;
 #X connect 1 0 0 0;
 #X connect 1 1 0 1;
@@ -104,6 +104,6 @@ Naveda for 0.43.4-extended;
 #X connect 7 0 8 0;
 #X connect 8 0 9 0;
 #X connect 9 0 6 0;
-#X connect 12 0 20 0;
+#X connect 12 0 19 0;
 #X connect 13 0 12 0;
-#X connect 33 0 12 0;
+#X connect 32 0 12 0;

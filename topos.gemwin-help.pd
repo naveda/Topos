@@ -9,18 +9,16 @@
 #X obj 503 189 loadbang;
 #X floatatom 501 262 5 0 0 0 - - -;
 #X msg 47 174 size 100 100;
-#X obj 314 173 gemwin;
+#X obj 303 172 gemwin;
 #X text 149 210 Size of the window;
 #X text 246 250 Background color;
-#X text 232 325 FPS (accept changes);
-#X text 141 172 Inlet redirects messages to;
+#X text 232 315 FPS (accept changes);
+#X text 131 172 Inlet redirects messages to;
 #X obj 53 315 cnv 15 4 60 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X text 51 403 Resets orientation (mouse on windows changes orientation)
-;
 #X obj 215 314 cnv 15 4 40 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X text -16 70 The window can be changed using the inlet (see help
+#X text -16 75 The window can be changed using the inlet (see help
 for [gemwin]) and also accepts changes of the camera orientation via
 mouse over window. Changes in orientation are reset using the bang
 reset.;
@@ -30,15 +28,13 @@ reset.;
 0;
 #X obj 159 230 cnv 15 4 40 empty empty empty 20 12 0 14 -128992 -260097
 0;
-#X text 49 374 Creates and destroys window CLICK on the gemWin for
-the window;
 #X text -25 274 Click here;
 #X text 408 227 Example:;
 #X text 118 338 DSP on/off and diagnostics;
 #X obj -15 -32 cnv 15 552 40 empty cnv.header topos.gemwin 3 12 0 18
 -204280 -1 0;
 #X text -3 -9 usage guide for internal help patches;
-#X text 316 -10 Topos Library;
+#X text 316 -9 Topos Library;
 #X text 423 -8 http://naveda.info;
 #X obj -2 432 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
 -228856 -1 0;
@@ -74,7 +70,6 @@ Naveda for 0.43.4-extended;
 #X msg 81 65 \; cnv.header label topos.gemwin;
 #X restore 440 633 pd guts;
 #X text 440 -30 [topos.gemwin];
-#X text 214 135 comment;
 #X text 95 443 Inlet redirects messages to gemwin. All messages follow
 gemwin objects;
 #X text -16 43 Creates and changes characteristics of the GEM window
@@ -82,6 +77,9 @@ and controls DSP audio (on off);
 #X text 360 37 Mouse controls:;
 #X text 360 59 - left button + drag: rotate camera;
 #X text 363 79 - right button + drag: zoom;
+#X text 51 403 REset - Resets orientation (mouse on windows changes
+orientation);
+#X text 49 374 GemWin - Creates and destroys window;
 #X connect 1 0 2 0;
 #X connect 2 0 4 0;
 #X connect 4 0 3 0;

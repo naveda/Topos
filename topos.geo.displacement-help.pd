@@ -1,4 +1,4 @@
-#N canvas 476 190 583 737 10;
+#N canvas 29 27 583 737 10;
 #X obj 16 341 sphere 0.1;
 #X obj 15 294 translateXYZ;
 #X obj 13 268 gemhead;
@@ -104,6 +104,7 @@ to the inlet restarts the calculation of total displacement from 0
 #X text 22 66 Calculates the frame-by-frame displacement of 3d points
 (3 floats \, x y z). It calculates the Euclidean distance between sucessive
 frames and accumulates it.;
+#X obj 429 18 topos.geo.displacement;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
 #X connect 3 0 0 0;
