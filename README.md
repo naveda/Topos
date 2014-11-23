@@ -20,10 +20,16 @@ exploring the spatial features of dance gestures for interactive musical applica
 in Proceedings of the 40th International Computer Music Conference (ICMC) / 11th Sound & Music
 Computing conference, Athens, Greece: University of Athens, 2014.
 
-## How it works?
+## How does it work?
+
+You can use Synapse, Osceleton or any other source of 3d position data as input.
+
+See the tutorials.
 
 ## Installing
+
  Just put it in your Pure Data path by using Pure Data's methods or by using the object [declare -path topos]
+
 ## Change Log
 v0.1 (First public release)
 
